@@ -8,8 +8,8 @@ public class Process {
 
     public Process(int memorySize, int id) {
         Random random = new Random();
-        processSize = random.nextInt(memorySize + 1);
-        runtime = random.nextInt(21);
+        processSize = random.nextInt(memorySize) + 1;
+        runtime = random.nextInt(20) + 1;
         this.id = id + 1;
     }
 

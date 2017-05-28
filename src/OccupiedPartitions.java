@@ -3,11 +3,13 @@ public class OccupiedPartitions {
     private int initialAddress;
     private int finalAddress;
     private int runtime;
+    private int id_process;
 
     public OccupiedPartitions(int initialAddress, Process process) {
         this.initialAddress = initialAddress;
-        this.finalAddress = initialAddress + process.getProcessSize();
+        this.finalAddress = (initialAddress + process.getProcessSize()) - 1;
         this.runtime = process.getRuntime();
+        this.id_process = process.getId();
     }
 
     public int getInitialAddress() {
@@ -22,15 +24,11 @@ public class OccupiedPartitions {
         return runtime;
     }
 
-    public void setInitialAddress(int initialAddress) {
-        this.initialAddress = initialAddress;
-    }
-
-    public void setFinalAddress(int finalAddress) {
-        this.finalAddress = finalAddress;
-    }
-
     public void setRuntime(int runtime) {
         this.runtime = runtime;
+    }
+
+    public int getId_process() {
+        return id_process;
     }
 }
